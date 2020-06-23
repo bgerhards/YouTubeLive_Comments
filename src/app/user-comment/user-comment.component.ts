@@ -14,4 +14,7 @@ export class UserCommentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUserName = () => this.userComment.userName || 'Unknown';
+
+
 }

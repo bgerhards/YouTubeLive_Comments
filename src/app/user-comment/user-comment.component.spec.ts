@@ -41,4 +41,12 @@ describe('UserCommentComponent', () => {
     const userName = nativeElement.querySelector('.userName').textContent;
     expect(userName).toBe('Brian Gerhards');
   })
+
+  it('should unknown as name of user that commented if one is not provided', () => {
+    userComment.userName = '';
+    fixture.detectChanges();
+
+    const userName = nativeElement.querySelector('.userName').textContent;
+    expect(userName).toBe('Unknown');
+  })
 });
