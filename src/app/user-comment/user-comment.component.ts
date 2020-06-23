@@ -15,7 +15,7 @@ export class UserCommentComponent implements OnInit {
 
   getUserName = () => this.userComment.userName || 'Unknown';
   getPosted = () => this.userComment.posted;
-  getCommentText = () => this.userComment.commentText;
+  getCommentText = () => this.userComment.commentText || 'n/a';
 
 
 }

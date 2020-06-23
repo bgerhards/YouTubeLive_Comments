@@ -38,8 +38,6 @@ describe('UserCommentComponent', () => {
   });
 
   it('should show name of user that commented', () => {
-    fixture.detectChanges();
-
     const userName = nativeElement.querySelector('.userName').textContent;
     expect(userName).toBe('Brian Gerhards');
   })
@@ -60,5 +58,13 @@ describe('UserCommentComponent', () => {
   it('should display comemnt text', () => {
     const commentText = nativeElement.querySelector('.commentText').textContent;
     expect(commentText).toBe('This is the comment text');
+  })
+
+  it('should display n/a when comment text does not exist', () => {
+    userComment.commentText = '';
+    fixture.detectChanges();
+
+    const commentText = nativeElement.querySelector('.commentText').textContent;
+    expect(commentText).toBe('n/a');
   })
 });
