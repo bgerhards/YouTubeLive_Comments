@@ -26,6 +26,7 @@ describe('UserCommentComponent', () => {
     userComment = new UserComment();
     userComment.userName = 'Brian Gerhards';
     userComment.posted ='04-05-1988';
+    userComment.commentText = 'This is the comment text';
 
     component.userComment = userComment;
 
@@ -52,11 +53,12 @@ describe('UserCommentComponent', () => {
   })
 
   it('should display date/time when comment was made', () => {
-
-    userComment.userName = '';
-    fixture.detectChanges();
-
     const posted = nativeElement.querySelector('.posted').textContent;
     expect(posted).toBe('04-05-1988');
+  })
+
+  it('should display comemnt text', () => {
+    const commentText = nativeElement.querySelector('.commentText').textContent;
+    expect(commentText).toBe('This is the comment text');
   })
 });

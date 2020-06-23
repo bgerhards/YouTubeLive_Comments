@@ -11,12 +11,11 @@ export class UserCommentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   getUserName = () => this.userComment.userName || 'Unknown';
-
   getPosted = () => this.userComment.posted;
+  getCommentText = () => this.userComment.commentText;
 
 
 }
